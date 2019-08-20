@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MockItems } from './mock/items.mock';
+import { item } from './model/items';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-items';
+  public items: Array<item> = MockItems;
+  public activeUser:item;
+  openUser(user: item){
+      this.activeUser = user;
+  }
 }
